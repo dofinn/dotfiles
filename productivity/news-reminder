@@ -1,0 +1,12 @@
+#!/bin/bash
+
+#export DISPLAY=:0
+#xhost localhost
+#/usr/bin/thunderbird &
+/usr/bin/newsboat
+
+notify-send "Whats news?" \
+            "Whats news?" \
+            -i /usr/share/pixmaps/fedora-logo-sprite.png \
+            -t 20000 \
+            -u normal

@@ -1,0 +1,11 @@
+#!/bin/bash
+
+export DISPLAY=:0
+xhost localhost
+/usr/bin/thunderbird &
+
+notify-send "Time to check emails" \
+            "zero inbox" \
+            -i /usr/share/pixmaps/fedora-logo-sprite.png \
+            -t 20000 \
+            -u normal

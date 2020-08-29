@@ -1,0 +1,14 @@
+[Unit]
+Description=Automatically renew a Kerberos ticket
+Documentation=man:krenew(1)
+
+[Service]
+# XXX ExecCondition is a fairly new systemd.service feature.
+#     Comment it out if it your systemd does not recognize it.
+ExecCondition=/usr/bin/klist -s
+ExecStart=/usr/bin/krenew -K 60 -v
+Restart=always
+
+[Install]
+WantedBy=default.target
+

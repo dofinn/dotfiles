@@ -1,0 +1,10 @@
+#!/bin/bash
+
+REMINDER=$1
+URL=$2
+
+notify-send "$REMINDER" \
+            "$URL" \
+            -i /usr/share/pixmaps/fedora-logo-sprite.png \
+            -t 20000 \
+            -u normal

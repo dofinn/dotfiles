@@ -1,0 +1,6 @@
+# Check emails
+0 8-16/4 * * 1-5 /usr/local/bin/email-reminder
+# read da news
+0 14 * * * /usr/local/bin/news-reminder
+# daily reminder
+0 9 * * 1-5 /usr/local/bin/gnome-reminder "do you need a cluster today???" ocm create cluster 
