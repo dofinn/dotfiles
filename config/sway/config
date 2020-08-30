@@ -2,11 +2,7 @@
 exec wl-paste -t text --watch clipman store
 exec wl-paste -p -t text --watch clipman store --histpath="~/.local/share/clipman-primary.json
 
-# Desktop notifications
-exec mako
-
-# redshift
-exec gammastep
+set $BIN_DIR ~/.local/bin
 
 # Default config for sway
 #
@@ -82,6 +78,7 @@ output DP-6 pos 2040 0 res 1920x1080
 ### Key bindings
 #
 # Basics:
+bindsym $mod+x exec $BIN_DIR/screenshare.sh
 # 
     # Start a terminal 
     bindsym $mod+Return exec $term 

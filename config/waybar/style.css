@@ -3,14 +3,14 @@
     border-radius: 0;
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: Roboto, Helvetica, Arial, sans-serif;
-    font-size: 13px;
+    font-size: 15px;
     min-height: 0;
 }
 
 window#waybar {
-    background-color: #000000;
-    border-bottom: 3px solid rgba(100, 114, 125, 0.5);
-    color: #ffffff;
+    background-color: #011b1c;
+    border-bottom: #011b1c;
+    color: #8ef1f5;
     transition-property: background-color;
     transition-duration: .5s;
 }
@@ -33,15 +33,15 @@ window#waybar.termite {
 }
 
 window#waybar.chromium {
-    background-color: #000000;
-	color: #ffffff;
+    background-color: #032f30;
+    color: #8ef1f5;
     border: none;
 }
 
 #workspaces button {
     padding: 0 5px;
     background-color: transparent;
-    color: #ffffff;
+    color: #8ef1f5;
     border-bottom: 3px solid transparent;
 }
 
@@ -58,7 +58,7 @@ window#waybar.chromium {
 }
 
 #workspaces button.urgent {
-    background-color: #eb4d4b;
+    background-color: #EE0000;
 }
 
 #mode {
@@ -76,6 +76,7 @@ window#waybar.chromium {
 #pulseaudio,
 #custom-media,
 #custom-ocm,
+#custom-weather,
 #tray,
 #mode,
 #idle_inhibitor,
@@ -86,12 +87,13 @@ window#waybar.chromium {
 }
 
 #clock {
-    background-color: #000000;
+    background-color: #011b1c;
+    color: #8ef1f5;
 }
 
 #battery {
-    background-color: #000000;
-    color: #ffffff;
+    background-color: #011b1c;
+    color: #8ef1f5;
 }
 
 #battery.charging {
@@ -121,21 +123,23 @@ label:focus {
 }
 
 #cpu {
-    background-color: #000000;
-    color: #ffffff;
+    background-color: #011b1c;
+    color: #8ef1f5;
 }
 
 #memory {
-    background-color: #000000;
+    background-color: #011b1c;
+    color: #8ef1f5;
 }
 
 #backlight {
-    background-color: #000000;
+    background-color: #011b1c;
+    color: #8ef1f5;
 }
 
 #network {
-    background-color: #000000;
-    color: #3fb5b1;
+    background-color: #011b1c;
+    color: #8ef1f5;
 }
 
 #network.disconnected {
@@ -143,7 +147,7 @@ label:focus {
 }
 
 #pulseaudio {
-    background-color: #000000;
+    background-color: #011b1c;
     color: #f1c40f;
 }
 
@@ -160,9 +164,12 @@ label:focus {
 
 /* https://www.redhat.com/en/about/brand/standards/color */
 #custom-ocm {
-    background-color: #DEDEDE;
-    color: #EE0000;
-    min-width: 100px;
+    background-color: #011b1c;
+    color: #8ef1f5;
+}
+
+#custom-weather {
+    color: #f1c40f;
 }
 
 #custom-media.custom-spotify {
@@ -174,7 +181,8 @@ label:focus {
 }
 
 #temperature {
-    background-color: #000000;
+    background-color: #011b1c;
+    color: #8ef1f5;
 }
 
 #temperature.critical {
