@@ -24,8 +24,7 @@ set $term tilix
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-#	set $menu dmenu_path | dmenu | xargs swaymsg exec --
-	set $menu dmenu_path | rofi -dmenu | xargs swaymsg exec --
+	set $menu wofi --show drun | xargs swaymsg exec --
 
 ### Output configuration
 #
@@ -75,6 +74,11 @@ output DP-6 pos 2040 0 res 1920x1080
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
 
+input "1267:32:Elan_Touchpad" {
+		tap enabled
+        natural_scroll disabled
+}
+
 ### Key bindings
 #
 # Basics:
@@ -102,6 +106,13 @@ bindsym $mod+x exec $BIN_DIR/screenshare.sh
 	bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 	bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 	bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+	bindsym Print exec grim -g "$(slurp)" /home/dofinn/Pictures/screenshots/$(date +"%Y%m%d_%H%M%S_grim.png")
+
+	# Workspace to monitor management
+	bindsym $mod+Control+Shift+Right move workspace to output right
+	bindsym $mod+Control+Shift+Left move workspace to output left
+	bindsym $mod+Control+Shift+Down move workspace to output down
+	bindsym $mod+Control+Shift+Up move workspace to output up
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -146,9 +157,9 @@ bindsym $mod+x exec $BIN_DIR/screenshare.sh
     bindsym $mod+1 workspace 1
     bindsym $mod+2 workspace 2
     bindsym $mod+3 workspace 3
-    bindsym $mod+4 workspace 4
-    bindsym $mod+5 workspace 5
-    bindsym $mod+6 workspace 6
+    bindsym $mod+u workspace 4
+    bindsym $mod+i workspace 5
+    bindsym $mod+o workspace 6
     bindsym $mod+7 workspace 7
     bindsym $mod+8 workspace 8
     bindsym $mod+9 workspace 9
@@ -245,3 +256,4 @@ input "type:keyboard" {
 
 titlebar_border_thickness 0
 titlebar_padding 0
+default_border none
