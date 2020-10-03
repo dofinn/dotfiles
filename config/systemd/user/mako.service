@@ -1,19 +1,11 @@
 [Unit]
-Description=Lightweight Wayland notification daemon
-Documentation=man:mako(1)
-PartOf=sway-session.target
-After=sway-session.target
-
+Description=Mako notification daemon
+Documentation=man:mako(1) man:makoctl(1)
+PartOf=graphical-session.target
 [Service]
 Type=dbus
 BusName=org.freedesktop.Notifications
-#ExecCondition=/bin/sh -c '[ -n "$WAYLAND_DISPLAY" ]'
-ExecStart=/usr/bin/mako
-ExecReload=/usr/bin/makoctl reload
-ExecStop=/bin/kill -2 $MAINPID
-Restart=on-failure
-RestartSec=1
-TimeoutStopSec=10
-
+ExecStart=/usr/bin/mako -c /home/dofinn/.config/mako/config
 [Install]
-WantedBy=sway-session.target
+WantedBy=default.target
+Alias=dbus-fr.emersion.Mako.service

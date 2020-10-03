@@ -7,7 +7,7 @@
 
 OCM=/home/dofinn/go/bin/ocm
 
-/usr/local/bin/ocm-stg-login &> /dev/null
+$HOME/.local/bin/ocm-stg-login &> /dev/null
 
 CLUSTER_INFO=$($OCM list cluster --managed | grep dofinn | awk '{print $1,$2, $4, $8}')
 

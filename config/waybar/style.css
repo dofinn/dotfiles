@@ -89,16 +89,19 @@ window#waybar.chromium {
 #clock {
     background-color: #011b1c;
     color: #8ef1f5;
+    padding: 0 2px;
 }
 
 #battery {
     background-color: #011b1c;
     color: #8ef1f5;
+    padding: 0 2px;
 }
 
 #battery.charging {
     color: #ffffff;
     background-color: #26A65B;
+    padding: 0 2px;
 }
 
 @keyframes blink {
@@ -116,6 +119,7 @@ window#waybar.chromium {
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+    padding: 0 2px;
 }
 
 label:focus {
@@ -125,96 +129,119 @@ label:focus {
 #cpu {
     background-color: #011b1c;
     color: #8ef1f5;
+    padding: 0 2px;
 }
 
 #memory {
     background-color: #011b1c;
     color: #8ef1f5;
+    padding: 0 2px;
 }
 
 #backlight {
     background-color: #011b1c;
     color: #8ef1f5;
+    padding: 0 2px;
 }
 
 #network {
     background-color: #011b1c;
     color: #8ef1f5;
+    padding: 0 2px;
 }
 
 #network.disconnected {
     background-color: #f53c3c;
+    padding: 0 2px;
 }
 
 #pulseaudio {
     background-color: #011b1c;
     color: #f1c40f;
+    padding: 0 2px;
 }
 
 #pulseaudio.muted {
     background-color: #90b1b1;
     color: #2a5c45;
+    padding: 0 2px;
 }
 
 #custom-media {
-    background-color: #66cc99;
-    color: #2a5c45;
+    background-color: #2d3436;
+/*    background-color: #66cc99;*/
+    color: #66cc99;
+/*    color: #2a5c45; */
     min-width: 100px;
+    padding: 0 2px;
 }
 
 /* https://www.redhat.com/en/about/brand/standards/color */
 #custom-ocm {
     background-color: #011b1c;
     color: #8ef1f5;
+    padding: 0 2px;
 }
 
 #custom-weather {
     color: #f1c40f;
+    padding: 0 2px;
 }
 
 #custom-media.custom-spotify {
-    background-color: #66cc99;
+/*    background-color: #66cc99;*/
+    padding: 0 2px;
 }
 
 #custom-media.custom-vlc {
     background-color: #ffa000;
+    padding: 0 2px;
 }
 
 #temperature {
     background-color: #011b1c;
     color: #8ef1f5;
+    padding: 0 2px;
 }
 
 #temperature.critical {
     background-color: #eb4d4b;
+    padding: 0 2px;
 }
 
 #tray {
     background-color: #2980b9;
+    padding: 0 2px;
 }
 
 #idle_inhibitor {
     background-color: #2d3436;
+    padding: 0 2px;
 }
 
 #idle_inhibitor.activated {
     background-color: #ecf0f1;
     color: #2d3436;
+    padding: 0 2px;
 }
 
 #mpd {
     background-color: #66cc99;
     color: #2a5c45;
+    padding: 0 2px;
 }
 
 #mpd.disconnected {
     background-color: #f53c3c;
+    padding: 0 2px;
 }
 
 #mpd.stopped {
     background-color: #90b1b1;
+    padding: 0 2px;
 }
 
 #mpd.paused {
     background-color: #51a37a;
+    padding: 0 2px;
 }

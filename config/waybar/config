@@ -4,22 +4,25 @@
     "height": 30, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
     // Choose the order of the modules
-    "modules-left": ["sway/workspaces", "sway/mode", "custom/weather", "custom/media"],
+    "modules-left": ["sway/workspaces", "sway/mode", "custom/media"],
     "modules-center": ["custom/ocm"],
-    "modules-right": ["idle_inhibitor", "pulseaudio", "custom/vpn", "network", "cpu", "memory", "temperature", "battery", "clock", "tray"],
+    "modules-right": ["idle_inhibitor", "pulseaudio", "custom/vpn", "network", "cpu", "memory", "temperature", "battery", "clock#utc", "clock#local", "tray"],
     // Modules configuration
      "sway/workspaces": {
          "disable-scroll": true,
          "all-outputs": true,
          "format": "{name}: {icon}",
          "format-icons": {
-             "1": "",
+             "1": "",
              "2": "",
-             "3": "",
-             "4": "",
-             "5": "",
+//             "3": "",
+             "3": "",
+			 "4": "🪵",
+             "5": "",
              "6": "",
-			 "7": "",
+             "7": "",
+			 "8": "",
+			 "9": "",
              "urgent": "",
              "focused": "",
              "default": ""
@@ -65,10 +68,17 @@
         // "icon-size": 21,
         "spacing": 10
     },
-    "clock": {
-        // "timezone": "Australia/Brisbane",
-		"format": "{:%H:%M:%S}",
+    "clock#local": {
+        "timezone": "Australia/Brisbane",
+		"format": "{:%Y-%m-%d %H:%M:%S }",
 		"interval": 1,
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+    "clock#utc": {
+        "timezone": "UTC",
+		"format": "{:UTC %H:%M }",
+		"interval": 60,
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%Y-%m-%d}"
     },
@@ -112,10 +122,12 @@
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "({signalStrength}%) ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
+//        "format-ethernet": "{ipaddr}/{cidr} ",
+        "format-ethernet": "",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+		"interval": 5
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
@@ -142,11 +154,12 @@
         "max-length": 40,
         "format-icons": {
             "spotify": "",
-            "default": "🎜"
+            "default": ""
+//            "default": "🎜"
         },
         "escape": true,
 //        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-         "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+         "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Filter player based on name
     },
 	"custom/vpn": {
 		"format": "VPN ",
